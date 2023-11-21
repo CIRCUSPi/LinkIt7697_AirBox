@@ -1,0 +1,281 @@
+<xml version="F2" board="ESP32 Dev Module" xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="0" x="100" y="50">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="serial_init" id="1;N$8,$VZKQ#5He[NJo~">
+        <field name="SPEED">9600</field>
+        <next>
+          <block type="ez_start_kit_oled_display_setting" id="lGnbJSd9(9NqVRLsC8;u"></block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="1">
+        <statement name="CONTENT">
+          <block type="pms5003_t_read" id="6Y;~bb/p5IudjI5fi*fY">
+            <field name="PMS">PMS5003T</field>
+            <field name="RX_PIN">2</field>
+            <field name="TX_PIN">3</field>
+            <next>
+              <block type="ez_start_kit_oled_display_clear" id="By;Oj%^8H6}D#Cs.@E1#">
+                <next>
+                  <block type="ez_start_kit_oled_display_draw_commands" id="Hd%+`~Pnb,`P_im`ff*_">
+                    <statement name="DRAW_CMD">
+                      <block type="oled_display_draw_text" id="*C%,eP`sv9OtsJ$hN8g1">
+                        <value name="START_X">
+                          <block type="math_number" id="u53%Nt8@BC2VfdI7TAzy">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="START_Y">
+                          <block type="math_number" id="B?bFMD;YyyKpP/%higl=">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="CONTENT">
+                          <block type="text_join" id="-1+l:?7Syo5diDmVgHnR">
+                            <mutation items="2"></mutation>
+                            <value name="ADD0">
+                              <block type="text" id="s56a._hd*ADe(8}n{}wS">
+                                <field name="TEXT">PM1.0: </field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="pms5003_t_read_sensor" id="4boF4@{BS.*O=hiy1R^{">
+                                <field name="PMS_CHOOSE">pms_read_PM1</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="oled_display_draw_text" id="GqWZOA5#E10p+cZU8}d!">
+                            <value name="START_X">
+                              <block type="math_number" id="}mrv#E5comrjq2pDURhT">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id="yn7Y3]S~ikEghCk0G|CE">
+                                <field name="NUM">10</field>
+                              </block>
+                            </value>
+                            <value name="CONTENT">
+                              <block type="text_join" id="`(*)VnnZP|5)Y|0ji8:W">
+                                <mutation items="2"></mutation>
+                                <value name="ADD0">
+                                  <block type="text" id="!5thL6.o}kwEYEAg**=p">
+                                    <field name="TEXT">PM2.5: </field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="pms5003_t_read_sensor" id="t.V_C[6#:k];#g:75k-K">
+                                    <field name="PMS_CHOOSE">pms_read_PM2</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="oled_display_draw_text" id="`7TE-WvROO@P}XS4Vu3M">
+                                <value name="START_X">
+                                  <block type="math_number" id=":I^~U{[w%!,Y*|]d$Kw#">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <value name="START_Y">
+                                  <block type="math_number" id="uE}HT{?P.CN_^HxpCe[:">
+                                    <field name="NUM">22</field>
+                                  </block>
+                                </value>
+                                <value name="CONTENT">
+                                  <block type="text_join" id="4E2cQ)4#eaV]yW-O33a]">
+                                    <mutation items="2"></mutation>
+                                    <value name="ADD0">
+                                      <block type="text" id="sR#yxTc6o2LkkTk)9.U{">
+                                        <field name="TEXT">PM10 : </field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="pms5003_t_read_sensor" id="+%x?`ZJ(EeK/k9L2`L?c">
+                                        <field name="PMS_CHOOSE">pms_read_PM10</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="oled_display_draw_text" id="LV=o)P!EoT-El_:ZSj^R">
+                                    <value name="START_X">
+                                      <block type="math_number" id="CNG~#jSHHu0]G];1#$S:">
+                                        <field name="NUM">0</field>
+                                      </block>
+                                    </value>
+                                    <value name="START_Y">
+                                      <block type="math_number" id="=ePhSx]/7;_yQmUozH[v">
+                                        <field name="NUM">33</field>
+                                      </block>
+                                    </value>
+                                    <value name="CONTENT">
+                                      <block type="text_join" id="k)Gq8Q]2{Ije^D-`yGJn">
+                                        <mutation items="2"></mutation>
+                                        <value name="ADD0">
+                                          <block type="text" id="DNa$=Xqj--$qa`X)HUqs">
+                                            <field name="TEXT">Temp : </field>
+                                          </block>
+                                        </value>
+                                        <value name="ADD1">
+                                          <block type="pms5003_t_read_sensor" id="P$hl$D;?/U?No)@ZrBt*">
+                                            <field name="PMS_CHOOSE">pms_read_Temp</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="oled_display_draw_text" id="ta6eZ2!P:VS@+jr@pe2f">
+                                        <value name="START_X">
+                                          <block type="math_number" id="PK@;7rmSjb%r|!akeu=h">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <value name="START_Y">
+                                          <block type="math_number" id="ZF`6F?t-kB7lMcwb]dD(">
+                                            <field name="NUM">44</field>
+                                          </block>
+                                        </value>
+                                        <value name="CONTENT">
+                                          <block type="text_join" id="3]1@Y8_yRfvBe]WE4(@N">
+                                            <mutation items="2"></mutation>
+                                            <value name="ADD0">
+                                              <block type="text" id="fb(fD$1??k^;RXv|K+fT">
+                                                <field name="TEXT">Humid: </field>
+                                              </block>
+                                            </value>
+                                            <value name="ADD1">
+                                              <block type="pms5003_t_read_sensor" id="_]VcfrO2rBKBcn1FVx%Y">
+                                                <field name="PMS_CHOOSE">pms_read_Humid</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="serial_println" id="Sx}=!XIh;g-O7O1}nVM6">
+                        <value name="CONTENT">
+                          <block type="text_join" id="2)cr0KX,e/@kxvn7,eM=">
+                            <mutation items="2"></mutation>
+                            <value name="ADD0">
+                              <block type="text" id="W63S!2ic:]D[R:IPZ;2{">
+                                <field name="TEXT">PM1.0: </field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="pms5003_t_read_sensor" id="%UoK(7M8^JmNCke#lnQK">
+                                <field name="PMS_CHOOSE">pms_read_PM1</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="serial_println" id="LHz5Ur?r`qO{2z7@xz`P">
+                            <value name="CONTENT">
+                              <block type="text_join" id="]6}9}l1S^lDM9yS8cgSV">
+                                <mutation items="2"></mutation>
+                                <value name="ADD0">
+                                  <block type="text" id="_~c0hP,3sRElHAasX0at">
+                                    <field name="TEXT">PM2.5: </field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="pms5003_t_read_sensor" id="|k9o{zg;/-B,9%.2S}b/">
+                                    <field name="PMS_CHOOSE">pms_read_PM2</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="serial_println" id="9P7BP;zpt_C9mtT[z.pp">
+                                <value name="CONTENT">
+                                  <block type="text_join" id="VRn-#~D*f;-Q8;N;ww[!">
+                                    <mutation items="2"></mutation>
+                                    <value name="ADD0">
+                                      <block type="text" id="^4Iz.kH|INE_M5n2{I[H">
+                                        <field name="TEXT">PM10 : </field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="pms5003_t_read_sensor" id="(;_wscUd9LX{P4rsCB:!">
+                                        <field name="PMS_CHOOSE">pms_read_PM10</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="serial_println" id="mV3vC|_.SC18}SCoIIqM">
+                                    <value name="CONTENT">
+                                      <block type="text_join" id="c_[kyR#Z4+6zWR0=7ItU">
+                                        <mutation items="2"></mutation>
+                                        <value name="ADD0">
+                                          <block type="text" id="Qs)t_J2cvTHf]!y`Sb65">
+                                            <field name="TEXT">Temp : </field>
+                                          </block>
+                                        </value>
+                                        <value name="ADD1">
+                                          <block type="pms5003_t_read_sensor" id="+^-]7,cl#L~1WX;3xmGC">
+                                            <field name="PMS_CHOOSE">pms_read_Temp</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="serial_println" id="7I#}wpQPAiae^mtIBk}K">
+                                        <value name="CONTENT">
+                                          <block type="text_join" id="0Eg)T%s0d9KT)]bFx3$[">
+                                            <mutation items="2"></mutation>
+                                            <value name="ADD0">
+                                              <block type="text" id="NZfcq*F1k7kyc9seK575">
+                                                <field name="TEXT">Humid: </field>
+                                              </block>
+                                            </value>
+                                            <value name="ADD1">
+                                              <block type="pms5003_t_read_sensor" id="*iFdGVg;z/KJs_xBXrdJ">
+                                                <field name="PMS_CHOOSE">pms_read_Humid</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="delay_custom" id="|MndSdstE}lO~I%gKEhL">
+                                            <value name="DELAY_TIME">
+                                              <block type="math_number" id="u#B#|20.$|R=Ztmi(R#R">
+                                                <field name="NUM">1000</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>
